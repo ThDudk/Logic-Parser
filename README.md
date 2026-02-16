@@ -5,7 +5,9 @@
 Simple logic parser that takes in a logical expression and lets you perform operations on it. I made this since I was learning about it in a course and thought it would be interesting to automate.
 
 ## Requirements
-- [Mattcox String Builder](https://github.com/mattcox/StringBuilder)
+- Swift 6.0+
+- [KindaSortaEqual](https://github.com/DandyLyons/KindaSortaEqual)
+- [String Builder](https://github.com/mattcox/StringBuilder)
 
 ## Usage
 

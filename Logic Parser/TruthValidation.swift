@@ -6,9 +6,18 @@
 //
 
 import Foundation
+import KindaSortaEqual
 
-public struct TruthValue: Equatable {
+public struct TruthValue: Equatable, Hashable {
     public let truth: Dictionary<String, Bool>
+    
+    public static func == (lhs: TruthValue, rhs: TruthValue) -> Bool {
+        return lhs.truth.values.hasSameElements(as: rhs.truth.values)
+    }
+    
+    public init(_ truth: Dictionary<String, Bool> = [:]) {
+        self.truth = truth
+    }
     
     public func known(constant: String) -> Bool {
         return truth.keys.contains(constant)
@@ -48,10 +57,15 @@ public struct TruthValue: Equatable {
 }
 
 public protocol TruthTable {
+    func allValues() -> [TruthValue]
+    func allValues(when: TruthValue) -> [TruthValue]
     func trueValues() -> [TruthValue]
+    func trueValues(when: TruthValue) -> [TruthValue]
     func falseValues() -> [TruthValue]
+    func falseValues(when: TruthValue) -> [TruthValue]
     
     func isTautology() -> Bool
+    func isLogicallyEquivalent(to: TruthTable) -> Bool
 }
 
 public extension TruthTable {
@@ -60,6 +74,12 @@ public extension TruthTable {
     }
     func isContradiction() -> Bool {
         return trueValues().isEmpty
+    }
+    func isLogicallyEquivalent(to: TruthTable) -> Bool {
+        let trueValues = trueValues()
+        let otherTrueValues = to.trueValues()
+        
+        return trueValues.hasSameElements(as: otherTrueValues)
     }
 }
 
@@ -75,6 +95,9 @@ struct ComprehensiveTruthTable : TruthTable {
     }
     
     public func allValues() -> [TruthValue] {
+        return allValues(when: TruthValue())
+    }
+    public func allValues(when: TruthValue) -> [TruthValue] {
         var variableToIndex: [String: Int] = [:]
         var truthArray: [Bool] = []
         
@@ -86,7 +109,18 @@ struct ComprehensiveTruthTable : TruthTable {
         var truthValues: [TruthValue] = []
         
         while true {
-            truthValues.append(TruthValue(truth: variableToIndex.mapValues( {truthArray[$0]} )))
+            let curr = TruthValue(variableToIndex.mapValues( {truthArray[$0]} ))
+            
+            var allMatch = true
+            for variable in variables {
+                if when.known(constant: variable) && when.isTrue(constant: variable) != curr.isTrue(constant: variable) {
+                    allMatch = false
+                    break;
+                }
+            }
+            
+            if allMatch {truthValues.append(curr)}
+            
             if !truthArray.contains(false) {break}
             truthArray = iterate(array: truthArray)
         }
@@ -109,10 +143,16 @@ struct ComprehensiveTruthTable : TruthTable {
         return newArray
     }
     
-    public func trueValues() -> [TruthValue] {
+    func trueValues() -> [TruthValue] {
+        return trueValues(when: TruthValue())
+    }
+    func falseValues() -> [TruthValue] {
+        return falseValues(when: TruthValue())
+    }
+    public func trueValues(when: TruthValue) -> [TruthValue] {
         var trueValues: [TruthValue] = []
         
-        for values in allValues() {
+        for values in allValues(when: when) {
             if !values.isTrue(tree: tree) {continue}
             trueValues.append(values)
         }
@@ -120,10 +160,10 @@ struct ComprehensiveTruthTable : TruthTable {
         return trueValues
     }
     
-    public func falseValues() -> [TruthValue] {
+    public func falseValues(when: TruthValue) -> [TruthValue] {
         var falseValues: [TruthValue] = []
         
-        for values in allValues() {
+        for values in allValues(when: when) {
             if values.isTrue(tree: tree) {continue}
             falseValues.append(values)
         }

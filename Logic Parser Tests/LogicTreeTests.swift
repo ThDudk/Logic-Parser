@@ -14,17 +14,6 @@ struct LogicTreeNodeTests {
         let node = LogicTreeNode(LogicUnits.and)
         #expect(node.data == LogicUnits.and)
     }
-    @Test func parent() {
-        let node = LogicTreeNode(LogicUnits.and)
-        #expect(node.parent == nil)
-        
-        let parent = LogicTreeNode(LogicUnits.and)
-        parent.left = node
-        
-        let parentAddress = Unmanaged.passUnretained(parent).toOpaque()
-        #expect(Unmanaged.passUnretained(node.parent!).toOpaque() == parentAddress)
-        #expect(parent.parent == nil)
-    }
     @Test func left() {
         let parent = LogicTreeNode(LogicUnits.and)
         let left = LogicTreeNode(LogicUnits.and)
@@ -68,9 +57,9 @@ struct LogicTreeNodeTests {
         #expect(parent.children == [])
     }
     @Test func allNodes() {
-        let a = LogicTreeNode(LogicUnits.constant(str: "a"))
-        let b = LogicTreeNode(LogicUnits.constant(str: "b"))
-        let c = LogicTreeNode(LogicUnits.constant(str: "c"))
+        let a = LogicTreeNode(.constant("a"))
+        let b = LogicTreeNode(.constant("b"))
+        let c = LogicTreeNode(.constant("c"))
         let or = LogicTreeNode(LogicUnits.or)
         let not = LogicTreeNode(LogicUnits.not)
         let and = LogicTreeNode(LogicUnits.and)
@@ -92,9 +81,9 @@ struct LogicTreeNodeTests {
         #expect(all.contains(c))
     }
     @Test func allConsts() {
-        let a = LogicTreeNode(LogicUnits.constant(str: "a"))
-        let b = LogicTreeNode(LogicUnits.constant(str: "b"))
-        let c = LogicTreeNode(LogicUnits.constant(str: "c"))
+        let a = LogicTreeNode(LogicUnits.constant("a"))
+        let b = LogicTreeNode(LogicUnits.constant("b"))
+        let c = LogicTreeNode(LogicUnits.constant("c"))
         let or = LogicTreeNode(LogicUnits.or)
         let not = LogicTreeNode(LogicUnits.not)
         let and = LogicTreeNode(LogicUnits.and)

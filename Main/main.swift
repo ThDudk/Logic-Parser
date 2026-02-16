@@ -27,4 +27,10 @@ let contradictions = C.filter({
     && P3.contains($0)
 })
 
+let s1 = try LogicTreeParser()
+    .parse(string: "~p v q")
+    .truthTable
+let trueValues = s1.trueValues(when: TruthValue(["p": true]))
+let falseValues = s1.falseValues(when: TruthValue(["p": true]))
+
 let i = 1 + 1

@@ -1,6 +1,24 @@
 {
-  "originHash" : "290e600ebdf8892cfedc7d1021f5f2254e1673bf0e026370f3b7ce2dd0c3cd45",
+  "originHash" : "f17db072c6d1b19b4e68f08179ba0096f4e6ed3464b3c06c049521a28dde7c0d",
   "pins" : [
+    {
+      "identity" : "kindasortaequal",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/DandyLyons/KindaSortaEqual",
+      "state" : {
+        "revision" : "fd62f5e81d3d1ad6c374b551ddffad86ff370986",
+        "version" : "0.2.0"
+      }
+    },
+    {
+      "identity" : "selectiveequatable",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/DandyLyons/SelectiveEquatable.git",
+      "state" : {
+        "revision" : "85410870a6d120dc9ef15b85269affeada8ab811",
+        "version" : "1.4.1"
+      }
+    },
     {
       "identity" : "stringbuilder",
       "kind" : "remoteSourceControl",

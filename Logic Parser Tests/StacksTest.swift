@@ -99,7 +99,7 @@ struct StackTest {
     }
     
     private func stackEquals<T: Equatable>(_ initialStack: any Stack<T>, _ array: [T]) -> Bool {
-        var stack = Array(initialStack)
+        let stack = Array(initialStack)
                 
         return stack == array
     }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-public protocol Stack<Element> : Collection {
+protocol Stack<Element> : Collection, Sendable {
     var top: Element? {get}
     var count: Int {get}
     
@@ -20,14 +20,14 @@ public protocol Stack<Element> : Collection {
 }
 
 extension Array : Stack {
-    public var top: Element? {last}
+    var top: Element? {last}
     
     @discardableResult
-    public mutating func pop() -> Element? {
+    mutating func pop() -> Element? {
         return removeLast()
     }
     @discardableResult
-    public mutating func pop(until: (_ item: Element) -> Bool) -> any Stack<Element> {
+    mutating func pop(until: (_ item: Element) -> Bool) -> any Stack<Element> {
         var array: [Element] = []
         while !isEmpty {
             if until(top!) { return array }
@@ -37,17 +37,17 @@ extension Array : Stack {
         return array
     }
     @discardableResult
-    public mutating func popAll() -> any Stack<Element> {
+    mutating func popAll() -> any Stack<Element> {
         var array: [Element] = []
         while !isEmpty {
             array.push(pop()!)
         }
         return array
     }
-    public mutating func push(_ item: Element) {
+    mutating func push(_ item: Element) {
         return append(item)
     }
-    public mutating func pushAll(_ items: any Collection<Element>) {
+    mutating func pushAll(_ items: any Collection<Element>) {
         for item in items {
             push(item)
         }
