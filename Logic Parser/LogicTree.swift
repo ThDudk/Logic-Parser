@@ -56,32 +56,43 @@ public class LogicTreeNode: CustomStringConvertible, Equatable {
     }
     
     public let data: LogicUnits
+    public private(set) var parent: LogicTreeNode?
     private var _left: LogicTreeNode?
     private var _right: LogicTreeNode?
     public var left: LogicTreeNode? {
         get { return _left }
         set(newValue) {
             if newValue == nil {
+                _left?.parent = nil
                 _left = nil
                 return
             }
             guard let child = newValue else { return }
             
             precondition({ if case .constant = data { return false } else { return true } }(), "Cannot add a child to a constant node")
-
+            precondition(child.parent == nil, "Cannot have multiple parents")
+            
+            child.parent = self
+            _left?.parent = nil
             _left = child
+
         }
     }
     public var right: LogicTreeNode? {
         get { return _right }
         set(newValue) {
             if newValue == nil {
+                _right?.parent = nil
                 _right = nil
                 return
             }
             guard let child = newValue else { return }
+            
             precondition({ if case .constant = data { return false } else { return true } }(), "Cannot add a child to a constant node")
-
+            precondition(child.parent == nil, "Cannot have multiple parents")
+            
+            child.parent = self
+            _right?.parent = nil
             _right = child
         }
     }
@@ -105,9 +116,55 @@ public class LogicTreeNode: CustomStringConvertible, Equatable {
         return nodes
     }
     public var allConsts: [LogicTreeNode] {
-        return allNodes.filter({ item in
-            if case .constant = item.data {return true} else {return false}
-        })
+        var constants: [LogicTreeNode] = []
+        
+        for node in allNodes {
+            if case .constant = node.data {
+                if !constants.allSatisfy( {$0.data != node.data}) {continue}
+                
+                constants.append(node)
+            }
+        }
+        return constants
+    }
+    
+    public var isArgument: Bool {
+        precondition(isValidLogicStatement)
+        
+        return data == .implication
+    }
+    public var premises: [LogicTreeNode]? {
+        precondition(isValidLogicStatement)
+        
+        guard isArgument else {
+            return nil
+        }
+        
+        var premises: [LogicTreeNode] = []
+        var rootsToCheck: any Stack<LogicTreeNode> = []
+        rootsToCheck.push(left!)
+        
+        while !rootsToCheck.isEmpty {
+            let curr = rootsToCheck.pop()!
+            
+            if curr.data != .and {
+                premises.append(curr)
+                continue
+            }
+            
+            rootsToCheck.pushAll([curr.left!, curr.right!])
+        }
+        
+        return premises
+    }
+    public var conclusion: LogicTreeNode? {
+        precondition(isValidLogicStatement)
+        
+        guard isArgument else {
+            return nil
+        }
+        
+        return right
     }
     
     public var isLeaf: Bool { return left == nil && right == nil }

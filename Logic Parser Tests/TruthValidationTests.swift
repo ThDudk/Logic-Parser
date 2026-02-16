@@ -57,6 +57,11 @@ struct TruthValidationTests {
         #expect(trues.contains { $0.isTrue(constant: "a") == true && $0.isTrue(constant: "b") == true })
         #expect(falses.contains { $0.isTrue(constant: "a") == false && $0.isTrue(constant: "b") == false })
     }
+    @Test
+    func correctNumberOfValues() throws {
+        let truthTable = try LogicTreeParser().parse(string: "((p v q) ^ (~q)) -> p").truthTable
+        #expect(truthTable.allValues().count == 4)
+    }
 
     @Test
     func tautology_and_contradiction_detection() {
@@ -104,5 +109,14 @@ struct TruthValidationTests {
         #expect(!(v1 == v4))
         #expect(!(v1 == v5))
         #expect(!(v1 == v6))
+    }
+    
+    @Test
+    func isValidArgument() throws {
+        let validArgument = try LogicTreeParser().parse(string: "((r -> w) & r) -> w")
+        let invalidArgument = try LogicTreeParser().parse(string: "((r -> w) & w) -> r")
+        
+        #expect(validArgument.truthTable.isValidArgument()!)
+        #expect(!invalidArgument.truthTable.isValidArgument()!)
     }
 }

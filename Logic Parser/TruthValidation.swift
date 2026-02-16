@@ -66,6 +66,8 @@ public protocol TruthTable {
     
     func isTautology() -> Bool
     func isLogicallyEquivalent(to: TruthTable) -> Bool
+    
+    func isValidArgument() -> Bool?
 }
 
 public extension TruthTable {
@@ -83,7 +85,26 @@ public extension TruthTable {
     }
 }
 
-struct ComprehensiveTruthTable : TruthTable {
+public struct ComprehensiveTruthTable : TruthTable {
+    public func isValidArgument() -> Bool? {
+        guard tree.isArgument else {return nil}
+        
+        let conclusion = tree.conclusion!.truthTable
+        let premises = tree.premises!.map({$0.truthTable})
+        
+        valuesLoop:
+        for value in allValues() {
+            if conclusion.falseValues(when: value).isEmpty {continue}
+            for premise in premises {
+                if premise.trueValues(when: value).isEmpty {continue valuesLoop}
+            }
+            
+            return false
+        }
+        
+        return true
+    }
+    
     public let tree: LogicTreeNode
     public var variables: [String] {
         tree.allConsts.map { node in
@@ -92,6 +113,11 @@ struct ComprehensiveTruthTable : TruthTable {
             }
             return string
         }
+    }
+    
+    init(tree: LogicTreeNode) {
+        precondition(tree.isValidLogicStatement)
+        self.tree = tree
     }
     
     public func allValues() -> [TruthValue] {
@@ -143,10 +169,10 @@ struct ComprehensiveTruthTable : TruthTable {
         return newArray
     }
     
-    func trueValues() -> [TruthValue] {
+    public func trueValues() -> [TruthValue] {
         return trueValues(when: TruthValue())
     }
-    func falseValues() -> [TruthValue] {
+    public func falseValues() -> [TruthValue] {
         return falseValues(when: TruthValue())
     }
     public func trueValues(when: TruthValue) -> [TruthValue] {
@@ -171,4 +197,3 @@ struct ComprehensiveTruthTable : TruthTable {
         return falseValues
     }
 }
-
