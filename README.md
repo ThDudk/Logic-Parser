@@ -1,8 +1,13 @@
-#  Swift Logic Parser
+# Swift Logic Parser
 
 ## Description
 
 Simple logic parser that takes in a logical expression and lets you perform operations on it. I made this since I was learning about it in a course and thought it would be interesting to automate.
+
+## Installation
+To install Swift Logic Parser, install it using the Swift Package Manager.
+
+go to `File/Add Package Dependencies`, then paste [https://github.com/ThDudk/Logic-Parser](https://github.com/ThDudk/Logic-Parser) in the search bar.
 
 ## Requirements
 - Swift 6.0+
