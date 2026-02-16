@@ -1,0 +1,15 @@
+{
+  "originHash" : "290e600ebdf8892cfedc7d1021f5f2254e1673bf0e026370f3b7ce2dd0c3cd45",
+  "pins" : [
+    {
+      "identity" : "stringbuilder",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/mattcox/StringBuilder",
+      "state" : {
+        "branch" : "main",
+        "revision" : "1328d44ef622c7b4fdcf75fce7b8ebb5b0e70168"
+      }
+    }
+  ],
+  "version" : 3
+}

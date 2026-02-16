@@ -6,8 +6,32 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		CD17196D2F3E5C3C00717EF2 /* libLogic Parser.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CD96DF742F3D0DE1000CED51 /* libLogic Parser.dylib */; };
+		CD96DF912F3D0E67000CED51 /* libLogic Parser.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CD96DF742F3D0DE1000CED51 /* libLogic Parser.dylib */; };
+		CD96DF9B2F3D0F59000CED51 /* StringBuilder in Frameworks */ = {isa = PBXBuildFile; productRef = CD96DF9A2F3D0F59000CED51 /* StringBuilder */; };
+		CDDE5D5A2F3D2E0F006BBBA6 /* StringBuilder in Frameworks */ = {isa = PBXBuildFile; productRef = CDDE5D592F3D2E0F006BBBA6 /* StringBuilder */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CD17196B2F3E5C3500717EF2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CDB20BAC2F3BA1470005931B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CD96DF732F3D0DE1000CED51;
+			remoteInfo = "Logic Parser";
+		};
+		CD96DF922F3D0E67000CED51 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CDB20BAC2F3BA1470005931B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CD96DF732F3D0DE1000CED51;
+			remoteInfo = "Logic Parser";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
-		CDB20BB22F3BA1470005931B /* CopyFiles */ = {
+		CD1719622F3E5C0E00717EF2 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -19,68 +43,162 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		CDB20BB42F3BA1470005931B /* Logic Parser */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Logic Parser"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD1719642F3E5C0E00717EF2 /* Main */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Main; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD96DF742F3D0DE1000CED51 /* libLogic Parser.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = "libLogic Parser.dylib"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD96DF8D2F3D0E67000CED51 /* Logic Parser Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Logic Parser Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		CDB20BB62F3BA1470005931B /* Logic Parser */ = {
+		CD1719652F3E5C0E00717EF2 /* Main */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = Main;
+			sourceTree = "<group>";
+		};
+		CD96DF752F3D0DE1000CED51 /* Logic Parser */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = "Logic Parser";
+			sourceTree = "<group>";
+		};
+		CD96DF8E2F3D0E67000CED51 /* Logic Parser Tests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Logic Parser Tests";
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		CDB20BB12F3BA1470005931B /* Frameworks */ = {
+		CD1719612F3E5C0E00717EF2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD17196D2F3E5C3C00717EF2 /* libLogic Parser.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD96DF722F3D0DE1000CED51 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD96DF9B2F3D0F59000CED51 /* StringBuilder in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD96DF8A2F3D0E67000CED51 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD96DF912F3D0E67000CED51 /* libLogic Parser.dylib in Frameworks */,
+				CDDE5D5A2F3D2E0F006BBBA6 /* StringBuilder in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CD96DF992F3D0F59000CED51 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CDB20BAB2F3BA1470005931B = {
 			isa = PBXGroup;
 			children = (
-				CDB20BB62F3BA1470005931B /* Logic Parser */,
-				CDB20BB52F3BA1470005931B /* Products */,
+				CD96DF742F3D0DE1000CED51 /* libLogic Parser.dylib */,
+				CD96DF752F3D0DE1000CED51 /* Logic Parser */,
+				CD96DF8D2F3D0E67000CED51 /* Logic Parser Tests.xctest */,
+				CD96DF8E2F3D0E67000CED51 /* Logic Parser Tests */,
+				CD1719652F3E5C0E00717EF2 /* Main */,
+				CD96DF992F3D0F59000CED51 /* Frameworks */,
+				CD1719642F3E5C0E00717EF2 /* Main */,
 			);
-			sourceTree = "<group>";
-		};
-		CDB20BB52F3BA1470005931B /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				CDB20BB42F3BA1470005931B /* Logic Parser */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		CD96DF702F3D0DE1000CED51 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
-		CDB20BB32F3BA1470005931B /* Logic Parser */ = {
+		CD1719632F3E5C0E00717EF2 /* Main */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CDB20BBB2F3BA1470005931B /* Build configuration list for PBXNativeTarget "Logic Parser" */;
+			buildConfigurationList = CD1719682F3E5C0E00717EF2 /* Build configuration list for PBXNativeTarget "Main" */;
 			buildPhases = (
-				CDB20BB02F3BA1470005931B /* Sources */,
-				CDB20BB12F3BA1470005931B /* Frameworks */,
-				CDB20BB22F3BA1470005931B /* CopyFiles */,
+				CD1719602F3E5C0E00717EF2 /* Sources */,
+				CD1719612F3E5C0E00717EF2 /* Frameworks */,
+				CD1719622F3E5C0E00717EF2 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				CD17196C2F3E5C3500717EF2 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
-				CDB20BB62F3BA1470005931B /* Logic Parser */,
+				CD1719652F3E5C0E00717EF2 /* Main */,
+			);
+			name = Main;
+			packageProductDependencies = (
+			);
+			productName = Main;
+			productReference = CD1719642F3E5C0E00717EF2 /* Main */;
+			productType = "com.apple.product-type.tool";
+		};
+		CD96DF732F3D0DE1000CED51 /* Logic Parser */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CD96DF7A2F3D0DE1000CED51 /* Build configuration list for PBXNativeTarget "Logic Parser" */;
+			buildPhases = (
+				CD96DF702F3D0DE1000CED51 /* Headers */,
+				CD96DF712F3D0DE1000CED51 /* Sources */,
+				CD96DF722F3D0DE1000CED51 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CD96DF982F3D0F4C000CED51 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				CD96DF752F3D0DE1000CED51 /* Logic Parser */,
 			);
 			name = "Logic Parser";
 			packageProductDependencies = (
+				CD96DF9A2F3D0F59000CED51 /* StringBuilder */,
 			);
 			productName = "Logic Parser";
-			productReference = CDB20BB42F3BA1470005931B /* Logic Parser */;
-			productType = "com.apple.product-type.tool";
+			productReference = CD96DF742F3D0DE1000CED51 /* libLogic Parser.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+		CD96DF8C2F3D0E67000CED51 /* Logic Parser Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CD96DF942F3D0E67000CED51 /* Build configuration list for PBXNativeTarget "Logic Parser Tests" */;
+			buildPhases = (
+				CD96DF892F3D0E67000CED51 /* Sources */,
+				CD96DF8A2F3D0E67000CED51 /* Frameworks */,
+				CD96DF8B2F3D0E67000CED51 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CDDE5D582F3D2E0A006BBBA6 /* PBXTargetDependency */,
+				CD96DF932F3D0E67000CED51 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				CD96DF8E2F3D0E67000CED51 /* Logic Parser Tests */,
+			);
+			name = "Logic Parser Tests";
+			packageProductDependencies = (
+				CDDE5D592F3D2E0F006BBBA6 /* StringBuilder */,
+			);
+			productName = "Logic Parser Tests";
+			productReference = CD96DF8D2F3D0E67000CED51 /* Logic Parser Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -92,7 +210,14 @@
 				LastSwiftUpdateCheck = 2620;
 				LastUpgradeCheck = 2620;
 				TargetAttributes = {
-					CDB20BB32F3BA1470005931B = {
+					CD1719632F3E5C0E00717EF2 = {
+						CreatedOnToolsVersion = 26.2;
+					};
+					CD96DF732F3D0DE1000CED51 = {
+						CreatedOnToolsVersion = 26.2;
+						LastSwiftMigration = 2620;
+					};
+					CD96DF8C2F3D0E67000CED51 = {
 						CreatedOnToolsVersion = 26.2;
 					};
 				};
@@ -106,18 +231,47 @@
 			);
 			mainGroup = CDB20BAB2F3BA1470005931B;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				CD0BB63B2F3C0C450055EDE9 /* XCRemoteSwiftPackageReference "StringBuilder" */,
+			);
 			preferredProjectObjectVersion = 77;
-			productRefGroup = CDB20BB52F3BA1470005931B /* Products */;
+			productRefGroup = CDB20BAB2F3BA1470005931B;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CDB20BB32F3BA1470005931B /* Logic Parser */,
+				CD96DF732F3D0DE1000CED51 /* Logic Parser */,
+				CD96DF8C2F3D0E67000CED51 /* Logic Parser Tests */,
+				CD1719632F3E5C0E00717EF2 /* Main */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		CD96DF8B2F3D0E67000CED51 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
-		CDB20BB02F3BA1470005931B /* Sources */ = {
+		CD1719602F3E5C0E00717EF2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD96DF712F3D0DE1000CED51 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD96DF892F3D0E67000CED51 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -126,7 +280,123 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		CD17196C2F3E5C3500717EF2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CD96DF732F3D0DE1000CED51 /* Logic Parser */;
+			targetProxy = CD17196B2F3E5C3500717EF2 /* PBXContainerItemProxy */;
+		};
+		CD96DF932F3D0E67000CED51 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CD96DF732F3D0DE1000CED51 /* Logic Parser */;
+			targetProxy = CD96DF922F3D0E67000CED51 /* PBXContainerItemProxy */;
+		};
+		CD96DF982F3D0F4C000CED51 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = CD96DF972F3D0F4C000CED51 /* StringBuilder */;
+		};
+		CDDE5D582F3D2E0A006BBBA6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = CDDE5D572F3D2E0A006BBBA6 /* StringBuilder */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		CD1719692F3E5C0E00717EF2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C3JQWGA69F;
+				ENABLE_HARDENED_RUNTIME = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		CD17196A2F3E5C0E00717EF2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C3JQWGA69F;
+				ENABLE_HARDENED_RUNTIME = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		CD96DF7B2F3D0DE1000CED51 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C3JQWGA69F;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_PREFIX = lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_PRECOMPILE_BRIDGING_HEADER = YES;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		CD96DF7C2F3D0DE1000CED51 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = C3JQWGA69F;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				EXECUTABLE_PREFIX = lib;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_PRECOMPILE_BRIDGING_HEADER = YES;
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		CD96DF952F3D0E67000CED51 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = C3JQWGA69F;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "io.github.thdudk.Logic-Parser-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		CD96DF962F3D0E67000CED51 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = C3JQWGA69F;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "io.github.thdudk.Logic-Parser-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		CDB20BB92F3BA1470005931B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -247,35 +517,36 @@
 			};
 			name = Release;
 		};
-		CDB20BBC2F3BA1470005931B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = C3JQWGA69F;
-				ENABLE_HARDENED_RUNTIME = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		CDB20BBD2F3BA1470005931B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = C3JQWGA69F;
-				ENABLE_HARDENED_RUNTIME = YES;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		CD1719682F3E5C0E00717EF2 /* Build configuration list for PBXNativeTarget "Main" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD1719692F3E5C0E00717EF2 /* Debug */,
+				CD17196A2F3E5C0E00717EF2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CD96DF7A2F3D0DE1000CED51 /* Build configuration list for PBXNativeTarget "Logic Parser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD96DF7B2F3D0DE1000CED51 /* Debug */,
+				CD96DF7C2F3D0DE1000CED51 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CD96DF942F3D0E67000CED51 /* Build configuration list for PBXNativeTarget "Logic Parser Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD96DF952F3D0E67000CED51 /* Debug */,
+				CD96DF962F3D0E67000CED51 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		CDB20BAF2F3BA1470005931B /* Build configuration list for PBXProject "Logic Parser" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -285,16 +556,41 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CDB20BBB2F3BA1470005931B /* Build configuration list for PBXNativeTarget "Logic Parser" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CDB20BBC2F3BA1470005931B /* Debug */,
-				CDB20BBD2F3BA1470005931B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CD0BB63B2F3C0C450055EDE9 /* XCRemoteSwiftPackageReference "StringBuilder" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mattcox/StringBuilder";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CD96DF972F3D0F4C000CED51 /* StringBuilder */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CD0BB63B2F3C0C450055EDE9 /* XCRemoteSwiftPackageReference "StringBuilder" */;
+			productName = StringBuilder;
+		};
+		CD96DF9A2F3D0F59000CED51 /* StringBuilder */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CD0BB63B2F3C0C450055EDE9 /* XCRemoteSwiftPackageReference "StringBuilder" */;
+			productName = StringBuilder;
+		};
+		CDDE5D572F3D2E0A006BBBA6 /* StringBuilder */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CD0BB63B2F3C0C450055EDE9 /* XCRemoteSwiftPackageReference "StringBuilder" */;
+			productName = StringBuilder;
+		};
+		CDDE5D592F3D2E0F006BBBA6 /* StringBuilder */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CD0BB63B2F3C0C450055EDE9 /* XCRemoteSwiftPackageReference "StringBuilder" */;
+			productName = StringBuilder;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CDB20BAC2F3BA1470005931B /* Project object */;
 }
