@@ -6,6 +6,22 @@
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES"
       buildArchitectures = "Automatic">
+      <BuildActionEntries>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "CD96DF732F3D0DE1000CED51"
+               BuildableName = "libLogic Parser.dylib"
+               BlueprintName = "Logic Parser"
+               ReferencedContainer = "container:Logic Parser.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+      </BuildActionEntries>
    </BuildAction>
    <TestAction
       buildConfiguration = "Debug"
@@ -37,16 +53,6 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CD1719632F3E5C0E00717EF2"
-            BuildableName = "Main"
-            BlueprintName = "Main"
-            ReferencedContainer = "container:Logic Parser.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -57,9 +63,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "CD1719632F3E5C0E00717EF2"
-            BuildableName = "Main"
-            BlueprintName = "Main"
+            BlueprintIdentifier = "CD96DF732F3D0DE1000CED51"
+            BuildableName = "libLogic Parser.dylib"
+            BlueprintName = "Logic Parser"
             ReferencedContainer = "container:Logic Parser.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
