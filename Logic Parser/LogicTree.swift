@@ -314,15 +314,6 @@ public extension LogicTreeNode {
 
 @resultBuilder
 public struct LogicTreeBuilder {
-    public static func buildBlock(_ left: LogicUnits, _ right: LogicUnits) -> [LogicTreeNode] {
-        return [LogicTreeNode(left), LogicTreeNode(right)]
-    }
-    public static func buildBlock(_ left: LogicTreeNode, _ right: LogicUnits) -> [LogicTreeNode] {
-        return [left, LogicTreeNode(right)]
-    }
-    public static func buildBlock(_ left: LogicUnits, _ right: LogicTreeNode) -> [LogicTreeNode] {
-        return [LogicTreeNode(left), right]
-    }
     public static func buildBlock(_ left: LogicTreeNode, _ right: LogicTreeNode) -> [LogicTreeNode] {
         return [left, right]
     }

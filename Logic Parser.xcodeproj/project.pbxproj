@@ -44,6 +44,7 @@
 
 /* Begin PBXFileReference section */
 		CD1719642F3E5C0E00717EF2 /* Main */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Main; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD87DFD22F43BAB30095E592 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		CD96DF742F3D0DE1000CED51 /* libLogic Parser.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = "libLogic Parser.dylib"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD96DF8D2F3D0E67000CED51 /* Logic Parser Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Logic Parser Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -105,6 +106,7 @@
 		CDB20BAB2F3BA1470005931B = {
 			isa = PBXGroup;
 			children = (
+				CD87DFD22F43BAB30095E592 /* README.md */,
 				CD96DF742F3D0DE1000CED51 /* libLogic Parser.dylib */,
 				CD96DF752F3D0DE1000CED51 /* Logic Parser */,
 				CD96DF8D2F3D0E67000CED51 /* Logic Parser Tests.xctest */,
