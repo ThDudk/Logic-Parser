@@ -1,9 +1,5 @@
 # Swift Logic Parser
 
-## Project status
-
-I don't intend to do any more work on this project. 
-
 ## Description
 
 Simple logic parser that takes in a propositional statement and allows you analyze it's truth. I made this since I was learning about it in a course and thought it would be interesting to automate.
